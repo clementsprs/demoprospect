@@ -14,12 +14,13 @@
         window.onload = function() {
             var website = getQueryParam('website');
             if (website) {
-                // Construct the image URL based on the website parameter
-                var imageUrl = 'https://username.github.io/repository-name/screenshots/' + website + '.jpg';
+                // Update the imageUrl to point to the main folder
+                var imageUrl = 'https://username.github.io/repository-name/' + website + '.jpg';
                 document.getElementById('screenshot').src = imageUrl;
             }
         };
     </script>
 </body>
 </html>
+
 
