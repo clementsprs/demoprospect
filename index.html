@@ -11,43 +11,15 @@
             return urlParams.get(param);
         }
 
-        function getFileIdForWebsite(website, callback) {
-            // Replace with your Google Sheet JSON URL
-            var sheetJsonUrl = 'YOUR_GOOGLE_SHEET_JSON_URL';
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', sheetJsonUrl);
-            xhr.onload = function() {
-                var json = JSON.parse(xhr.responseText.substr(47).slice(0, -2));
-                var data = json.table.rows;
-
-                var fileId = '';
-                for (var i = 0; i < data.length; i++) {
-                    var row = data[i].c;
-                    var site = row[0] ? row[0].v : '';
-                    var id = row[1] ? row[1].v : '';
-                    if (site === website) {
-                        fileId = id;
-                        break;
-                    }
-                }
-                callback(fileId);
-            };
-            xhr.send();
-        }
-
         window.onload = function() {
             var website = getQueryParam('website');
             if (website) {
-                getFileIdForWebsite(website, function(fileId) {
-                    if (fileId) {
-                        var imageUrl = 'https://drive.google.com/uc?export=view&id=' + fileId;
-                        document.getElementById('screenshot').src = imageUrl;
-                    } else {
-                        document.getElementById('screenshot').alt = 'Screenshot not available';
-                    }
-                });
+                // Construct the image URL based on the website parameter
+                var imageUrl = 'https://username.github.io/repository-name/screenshots/' + website + '.jpg';
+                document.getElementById('screenshot').src = imageUrl;
             }
         };
     </script>
 </body>
 </html>
+
