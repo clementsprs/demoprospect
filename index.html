@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website Screenshots</title>
+    <title>iAdvize Demo</title>
+    <style>
+        /* Topbar styles */
+        .topbar {
+            background-color: #5C3FC9;
+            color: white;
+            font-family: Helvetica, sans-serif;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Center the image */
+        #screenshot {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <img id="screenshot" src="" alt="Website Screenshot" style="max-width: 100%; height: auto;">
+    <div class="topbar">
+        iAdvize Demo
+    </div>
+    <img id="screenshot" src="" alt="Website Screenshot">
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -22,5 +43,3 @@
     </script>
 </body>
 </html>
-
-
